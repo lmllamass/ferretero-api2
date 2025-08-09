@@ -55,8 +55,8 @@ CREATE TABLE referencia (
     REFERENCES vinyeta(id)
     ON DELETE CASCADE,
   sku VARCHAR(100),
-  precio NUMERIC(10,2),
-  stock INTEGER
+  precio NUMERIC(10,2) CHECK (precio >= 0),
+  stock INTEGER CHECK (stock >= 0)
 );
 
 -- 7. Atributo Diferenciador
